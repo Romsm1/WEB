@@ -1,16 +1,15 @@
 from fastapi import FastAPI
+import uvicorn
 
-# Создаем экземпляр приложения FastAPI
 app = FastAPI()
 
-# Определяем маршрут для корневого URL (/)
+
 @app.get("/")
-def read_root():
-    # Возвращаем JSON-ответ
-    return {"message": "Добро пожаловать в моё приложение FastAPI!"}
+def greet():
+    return {
+        "message": "Добро пожаловать в моё приложение FastAPI!",
+    }
 
 
-
-
-# для запуска приложения с помощью uvicorn в режиме разработки (с флагом автоперезагрузки)
-# uvicorn app:app --reload
+if __name__ == "__main__":
+    uvicorn.run("task 1:app", reload=True)
