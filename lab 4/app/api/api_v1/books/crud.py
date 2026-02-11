@@ -24,5 +24,4 @@ def get_book_by_slug(slug: str) -> Book | None:
 
 def create_book(book_in: BookCreate) -> Book:
     book = Book(**book_in.model_dump())
-    BOOKS.append(book)
     return book
