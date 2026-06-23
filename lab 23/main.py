@@ -17,3 +17,5 @@ if __name__ == '__main__':
 # docker run -d -p 6379:6379 redis
 
 # uv run python manage.py token create
+
+# uv run pytest test_api/test_api_v1/test_books/test_crud.py -v
