@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Books
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <h1 class="fw-bold">Books list</h1>
+
+    {% if books %} <!-- Проверяем, есть ли книги -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Slug</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Pages</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %} <!--  проходим по всем книгам и создаем строки таблицы -->
+                <tr>
+                    <td><code>{{ book.slug }}</code></td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>{{ book.pages }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %} <!-- Если книг нет -->
+        <h3 class="fw-bold">No books</h3>
+    {% endif %}
+</div>
+{% endblock %}
