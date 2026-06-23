@@ -19,3 +19,6 @@ if __name__ == '__main__':
 # uv run python manage.py token create
 
 # uv run pytest test_api/test_api_v1/test_books/test_crud.py -v
+
+
+# uv pip install fastapi uvicorn jinja2 redis pydantic typer rich pytest
